@@ -61,5 +61,15 @@ const myTravelLog = new TravelLog();
              alert("Please fill in required fields!"); 
              return; 
             }
+        const newPlace = new Destination(
+            locationIn.value, subLocIn.value, 
+            landmrkIn.value, yearIn.value, 
+            seasonIn.value, monthIn.value, notesIn.value ); 
+
+            myTravelLog.addDestination(newPlace); 
+            alert("Destination Added!");
             
+            locationIn.value = subLocIn.value = landmrkIn.value = yearIn.value = seasonIn.value = monthIn.value = notesIn.value = ""; 
+            renderDestinations();
+        
         }
