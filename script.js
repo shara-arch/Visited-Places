@@ -24,14 +24,15 @@ TravelLog.prototype.addDestination = function(destination){
     
 };
 
-TravelLog.prototype.deleteDestination = function(id){
-    if (this.destinations[id]){
-        delete this.destinations[id];
-        this.saveToStorage();
-        return true;
-    }
-    return false;
-}
+TravelLog.prototype.deleteDestination = function(id) {
+  if (this.destinations[id]) {
+    delete this.destinations[id];
+    this.saveToStorage();
+    return true;
+  }
+  return false;
+};
+
 
 //
 function Destination(location, subLocation, landmark, year, season, month, notes) {
@@ -119,26 +120,29 @@ const myTravelLog = new TravelLog();
         if (!dest) return;
         const seasonEmoji = getSeasonEmoji(dest.season);
         document.getElementById("details").innerHTML=` <div class="destination-details">
-        <strong><i class="fas fa-map-marker-alt"></i> Place:</strong>  ${dest.subLocation} , ${dest.location}<br> <br>
-       
+        <strong><i class="fas fa-map-marker-alt"></i> Place:</strong>  ${dest.subLocation}, ${dest.location}<br> 
         <strong>🏛️Landmark:</strong> ${dest.landmark}<br> 
         <strong>📅Year:</strong> ${dest.year}<br> 
         <strong>${seasonEmoji}Season:</strong> ${dest.season}<br> 
         <strong>📅Month:</strong> ${dest.month}<br> 
-        <strong>📝Notes:</strong> ${dest.notes}<br><br> 
-        <button onclick="handleDelete(${dest.id} id="del-btn")">Delete</button></div> `;
+        <strong>📝Notes:</strong>
+         <p style="background-color:#cdc0cb; border-radius:4px; padding:1rem; font-size:0.9rem;">${dest.notes}</p><br><br> 
+        <button onclick="handleDelete(${dest.id})" 
+            style="background-color: #2B3D41;margin-top: 1rem;padding:15px; border:none;
+            border-radius: 4px;cursor: pointer;color:white;font-size: 1rem;">Delete</button></div> `;
 
+    
     }
+    function handleDelete(id) {
+  if (confirm("Delete this destination?")) {
+    myTravelLog.deleteDestination(id);
+    renderDestinations();
+    document.getElementById("details").innerHTML = "Select a place to view details";
+    console.log("Deleted:", id);
+  }
+};
 
-    function handleDelete(id) { 
-        if (confirm("Delete this destination?"))  { 
-            myTravelLog.deleteDestination(id);
-            renderDestinations();
-
-            document.getElementById("details").innerHTML = "Select a place to view details"; 
-        } 
-        console.log("Place Deleted");
-    }
+    
 
     document.addEventListener('DOMContentLoaded', renderDestinations);
     
