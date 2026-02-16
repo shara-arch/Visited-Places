@@ -45,11 +45,12 @@ footer{
 }
 .travel-log{
     background-color: #2B3D41;  
-    padding:20px;
+    padding:10px;
     border:none;
     border-radius: 7px;
     color:aliceblue;
     gap:15px;
+    text-align: center;
     
 }
 #destination-details{
@@ -57,18 +58,30 @@ footer{
     padding:20px;
     border:none;
     border-radius: 7px;
-    margin-top:2rem;
+    margin:2rem auto;
+    
     gap:15px;
+    font-size: 1.2rem;
+
 }
 .placeCard {
 
     background-color:#F9B9F2;
     border-radius: 4px ;
-    padding: 15px 20px;
+    padding: 15px 7rem;
     color: black;
     display: flex;
-    /* align-items: center;
-    justify-content: space-between;
-    border-left: 5px solid var(--text-muted); */
-   
-        }
+    margin-top: 1rem;
+    
+}
+#del-btn{
+    background-color: #2B3D41;
+    margin-top: 1rem;
+    padding:15px;
+    border:none;
+    border-radius: 4px;
+    cursor: pointer;
+    color:white;
+    font-size: 1rem;
+
+}

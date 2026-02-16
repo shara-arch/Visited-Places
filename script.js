@@ -103,14 +103,14 @@ const myTravelLog = new TravelLog();
         if (!dest) return;
 
         document.getElementById("details").innerHTML=` <div class="destination-details">
-        <strong>Location:</strong> ${dest.location}<br> 
-        <strong>Sub-Location:</strong> ${dest.subLocation}<br> 
-        <strong>Landmark:</strong> ${dest.landmark}<br> 
-        <strong>Year:</strong> ${dest.year}<br> 
+        <strong><i class="fas fa-map-marker-alt"></i> Place:</strong>  ${dest.subLocation} , ${dest.location}<br> <br>
+       
+        <strong>🏛️Landmark:</strong> ${dest.landmark}<br> 
+        <strong>📅Year:</strong> ${dest.year}<br> 
         <strong>Season:</strong> ${dest.season}<br> 
-        <strong>Month:</strong> ${dest.month}<br> 
-        <strong>Notes:</strong> ${dest.notes}<br><br> 
-        <button onclick="handleDelete(${dest.id})">Delete</button></div> `;
+        <strong>📅Month:</strong> ${dest.month}<br> 
+        <strong>📝Notes:</strong> ${dest.notes}<br><br> 
+        <button onclick="handleDelete(${dest.id} id="del-btn")">Delete</button></div> `;
 
     }
 
