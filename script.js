@@ -90,9 +90,28 @@ const myTravelLog = new TravelLog();
              return; 
             } 
         destArr.forEach(dest => { 
-            const item = document.createElement('li'); 
-            item.textContent = `${dest.location} - ${dest.subLocation}`; 
+            const item = document.createElement('div'); 
+            item.className = 'placeCard';
+            item.textContent = `${dest.subLocation} - ${dest.location}`; 
             item.style.cursor = "pointer"; 
             item.onclick = () => showDetails(dest.id); 
-            listEl.appendChild(item); }); 
-        }
+            listEl.appendChild(item); 
+        }); 
+    }
+    function showDetails(id) {
+        const dest = myTravelLog.destinations[id];
+        if (!dest) return;
+
+        document.getElementById("details").innerHTML=` 
+        <strong>Location:</strong> ${dest.location}<br> 
+        <strong>Sub-Location:</strong> ${dest.subLocation}<br> 
+        <strong>Landmark:</strong> ${dest.landmark}<br> 
+        <strong>Year:</strong> ${dest.year}<br> 
+        <strong>Season:</strong> ${dest.season}<br> 
+        <strong>Month:</strong> ${dest.month}<br> 
+        <strong>Notes:</strong> ${dest.notes}<br><br> 
+        <button onclick="handleDelete(${dest.id})">Delete</button> `;
+
+    }
+    
+
