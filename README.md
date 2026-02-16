@@ -7,7 +7,7 @@ It allows the user to **Create, View, and Delete destinations**, with details di
 ---
 
 ## 📸 Web-page Preview
-![Travel Log Screenshot](![alt text](image.png))
+![alt text](image.png)
 
 ---
 
