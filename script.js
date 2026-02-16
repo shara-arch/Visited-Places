@@ -71,6 +71,7 @@ const myTravelLog = new TravelLog();
             
             locationIn.value = subLocIn.value = landmrkIn.value = yearIn.value = seasonIn.value = monthIn.value = notesIn.value = ""; 
             renderDestinations();
+            console.log("Destination Added")
         
         }
 
@@ -97,17 +98,32 @@ const myTravelLog = new TravelLog();
             item.onclick = () => showDetails(dest.id); 
             listEl.appendChild(item); 
         }); 
+        console.log("")
     }
+
+    //Add Emoji for styling
+    function getSeasonEmoji(season) {
+    const map = {
+    Spring: "🌸",
+    Summer: "☀️",
+    Autumn: "🍂",
+    Winter: "❄️"
+  };
+  return map[season];
+ 
+};
+
+
     function showDetails(id) {
         const dest = myTravelLog.destinations[id];
         if (!dest) return;
-
+        const seasonEmoji = getSeasonEmoji(dest.season);
         document.getElementById("details").innerHTML=` <div class="destination-details">
         <strong><i class="fas fa-map-marker-alt"></i> Place:</strong>  ${dest.subLocation} , ${dest.location}<br> <br>
        
         <strong>🏛️Landmark:</strong> ${dest.landmark}<br> 
         <strong>📅Year:</strong> ${dest.year}<br> 
-        <strong>Season:</strong> ${dest.season}<br> 
+        <strong>${seasonEmoji}Season:</strong> ${dest.season}<br> 
         <strong>📅Month:</strong> ${dest.month}<br> 
         <strong>📝Notes:</strong> ${dest.notes}<br><br> 
         <button onclick="handleDelete(${dest.id} id="del-btn")">Delete</button></div> `;
@@ -115,12 +131,13 @@ const myTravelLog = new TravelLog();
     }
 
     function handleDelete(id) { 
-        if (confirm("Delete this destination?")) 
-            { myTravelLog.deleteDestination(id);
+        if (confirm("Delete this destination?"))  { 
+            myTravelLog.deleteDestination(id);
             renderDestinations();
 
             document.getElementById("details").innerHTML = "Select a place to view details"; 
         } 
+        console.log("Place Deleted");
     }
 
     document.addEventListener('DOMContentLoaded', renderDestinations);
