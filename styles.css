@@ -2,11 +2,23 @@ body{
     margin: 0;
     padding: 20px;
     background-color: antiquewhite;
+   
 }
-h1{
+header{
     text-align: center;
 }
 .container{
     grid-template-columns: 1fr 1fr;
     display: flex;
+}
+
+.Add-Destination{
+    flex: 1;
+    max-width: 25%;
+    padding: 2rem 4rem;
+    border:  none;
+    box-shadow:0 4px 8px rgba(0,0,0,0.1) ;
+    border-radius: 8px;
+    background-color: #7ac4cf;
+    margin:1rem;
 }
