@@ -48,7 +48,7 @@ function Destination(location, subLocation, landmark, year, season, month, notes
 const myTravelLog = new TravelLog();
 
  
-    function addDestination() { 
+    function handleAddDestination() { 
         const locationIn = document.getElementById('location'); 
         const subLocIn = document.getElementById('sub-location'); 
         const landmrkIn = document.getElementById('landmark'); 
@@ -72,4 +72,27 @@ const myTravelLog = new TravelLog();
             locationIn.value = subLocIn.value = landmrkIn.value = yearIn.value = seasonIn.value = monthIn.value = notesIn.value = ""; 
             renderDestinations();
         
+        }
+
+// Render destinations list and details 
+    function renderDestinations() { 
+        const listEl = document.getElementById('places'); 
+        const countEl = document.getElementById('destinationCount'); 
+        if (!listEl) return; 
+        
+        listEl.innerHTML = ""; 
+        const destArr = Object.values(myTravelLog.destinations); 
+
+        if (countEl) countEl.innerText = destArr.length; 
+
+        if (destArr.length === 0) {
+             listEl.innerHTML = "<div>No destinations found</div>"; 
+             return; 
+            } 
+        destArr.forEach(dest => { 
+            const item = document.createElement('li'); 
+            item.textContent = `${dest.location} - ${dest.subLocation}`; 
+            item.style.cursor = "pointer"; 
+            item.onclick = () => showDetails(dest.id); 
+            listEl.appendChild(item); }); 
         }
