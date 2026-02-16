@@ -44,3 +44,22 @@ function Destination(location, subLocation, landmark, year, season, month, notes
      this.notes = notes; 
      this.id = null;
 }
+// Initialize Travel Log
+const myTravelLog = new TravelLog();
+
+ 
+    function addDestination() { 
+        const locationIn = document.getElementById('location'); 
+        const subLocIn = document.getElementById('sub-location'); 
+        const landmrkIn = document.getElementById('landmark'); 
+        const yearIn = document.getElementById('year'); 
+        const seasonIn = document.getElementById('season'); 
+        const monthIn = document.getElementById('month'); 
+        const notesIn = document.getElementById('notes'); 
+        if (locationIn.value.trim() === "" || subLocIn.value.trim() === "" || landmrkIn.value.trim() === "" 
+                || monthIn.value.trim() === "" || yearIn.value.trim() === "" || seasonIn.value.trim() === "" ) {
+             alert("Please fill in required fields!"); 
+             return; 
+            }
+            
+        }
