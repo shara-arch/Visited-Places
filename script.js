@@ -16,3 +16,22 @@ TravelLog.prototype.addDestination = function(location, subLocation, landmark, y
     alert(`Destination Added Successfully`);
     this.displayTravelLog();
 };
+
+TravelLog.prototype.deleteDestination = function(id){
+    if (this.destinations[id]){
+        delete this.destinations[id];
+        this.displayTravelLog();
+        return true;
+    }
+    return false;
+}
+
+function Destination(location, subLocation, landmark, year, season, month, notes) { 
+    this.location = location; 
+    this.subLocation = subLocation; 
+    this.landmark = landmark; 
+    this.year = year; 
+    this.season = season; 
+    this.month = month; 
+    this.notes = notes; 
+}
