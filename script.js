@@ -113,5 +113,16 @@ const myTravelLog = new TravelLog();
         <button onclick="handleDelete(${dest.id})">Delete</button> `;
 
     }
+
+    function handleDelete(id) { 
+        if (confirm("Delete this destination?")) 
+            { myTravelLog.deleteDestination(id);
+            renderDestinations();
+
+            document.getElementById("details").innerHTML = "Select a place to view details"; 
+        } 
+    }
+
+    document.addEventListener('DOMContentLoaded', renderDestinations);
     
 
