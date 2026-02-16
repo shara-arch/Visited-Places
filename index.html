@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>Visited Places</title>
 </head>
 <body>
@@ -11,9 +12,10 @@
     <h1>🌍 My Travel Log</h1>
     <p>Click a destination to see details</p>
     </header>
+  <section class="container">
    <section class="Add-Destination">
     <aside>
-        <h2>🌍 Create New Destination</h2>
+        <h2> <i class="fas fa-map-marker-alt"></i> Create New Destination</h2>
         <form>
             <label for="location">Location:</label><br>
             <input type="text" id="location" name="location" placeholder="e.g Kenya"><br><br>
@@ -64,8 +66,21 @@
         </form>
     </aside>
    </section>
+   <section class="travelLog" id="travelLogDisplay">
+    <div>
+        <h2>TRAVEL LOG</h2>
+        <p>
+            List of Travel Destinations will Appear here.
+        </p>
+    </div>
+   </section>
+   </section>
 
-   
-    
+   <footer>
+    <p>&copy; 2026 Sharon Moegi. All rights reserved.</p>
+   </footer>
+
+   <script src="script.js"></script>
+     
 </body>
 </html>
