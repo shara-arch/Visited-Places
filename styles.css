@@ -8,9 +8,13 @@ body{
 header{
     text-align: center;
 }
+
 .container{
     grid-template-columns: 1fr 1fr;
     display: flex;
+    gap: 20px; 
+    justify-content: center; 
+    margin-top: 30px;
 }
 
 .Add-Destination{
@@ -38,11 +42,19 @@ footer{
 
 }
 .travel-log{
-    background-color: #2B3D41;
-    flex: 1;
+    background-color: #2B3D41;  
     padding:20px;
     border:none;
     border-radius: 7px;
     color:aliceblue;
+    gap:15px;
+    
+}
+.destination-details{
+    background-color: #BCA0BC;
+    padding:20px;
+    border:none;
+    border-radius: 7px;
+    margin-top:2rem;
     gap:15px;
 }
