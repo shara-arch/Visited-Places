@@ -17,32 +17,20 @@ TravelLog.prototype.assignId = function () {
     return this.currentId;
 };
 
-TravelLog.prototype.addDestination = function(location, subLocation, landmark, year, season, month, notes){
-    const newDestination = new this.destinations(location, subLocation, landmark, year, season, month, notes);
-    newDestination.id = this.assignId();
-    this.destinations[newDestination.id] = newDestination;
-
-    alert(`Destination Added Successfully`);
-    this.displayTravelLog();
+TravelLog.prototype.addDestination = function(destination){
+    destination.id = Date.now(); 
+    this.destinations[destination.id] = destination; 
+    this.saveToStorage();
+    
 };
 
 TravelLog.prototype.deleteDestination = function(id){
     if (this.destinations[id]){
         delete this.destinations[id];
-        this.displayTravelLog();
+        this.saveToStorage();
         return true;
     }
     return false;
 }
 
 
-TravelLog.prototype.displayTravelLog = function(){
-     const placesList = document.getElementById("places"); 
-     placesList.innerHTML = ""; 
-     for (let id in this.destinations) { 
-        const dest = this.destinations[id]; 
-        const li = document.createElement("li"); 
-        li.textContent = `${dest.location} - ${dest.subLocation}`; 
-        li.onclick = () => showDetails(dest); placesList.appendChild(li); 
-    } 
-     };
