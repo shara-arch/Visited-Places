@@ -102,7 +102,7 @@ const myTravelLog = new TravelLog();
         const dest = myTravelLog.destinations[id];
         if (!dest) return;
 
-        document.getElementById("details").innerHTML=` 
+        document.getElementById("details").innerHTML=` <div class="destination-details">
         <strong>Location:</strong> ${dest.location}<br> 
         <strong>Sub-Location:</strong> ${dest.subLocation}<br> 
         <strong>Landmark:</strong> ${dest.landmark}<br> 
@@ -110,7 +110,7 @@ const myTravelLog = new TravelLog();
         <strong>Season:</strong> ${dest.season}<br> 
         <strong>Month:</strong> ${dest.month}<br> 
         <strong>Notes:</strong> ${dest.notes}<br><br> 
-        <button onclick="handleDelete(${dest.id})">Delete</button> `;
+        <button onclick="handleDelete(${dest.id})">Delete</button></div> `;
 
     }
 

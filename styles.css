@@ -13,10 +13,12 @@ header{
     grid-template-columns: 1fr 1fr;
     display: flex;
     gap: 20px; 
+    
+}
+destinations{
     justify-content: center; 
     margin-top: 30px;
 }
-
 .Add-Destination{
     flex: 1;
     max-width: 25%;
@@ -50,7 +52,7 @@ footer{
     gap:15px;
     
 }
-.destination-details{
+#destination-details{
     background-color: #BCA0BC;
     padding:20px;
     border:none;
@@ -58,3 +60,15 @@ footer{
     margin-top:2rem;
     gap:15px;
 }
+.placeCard {
+
+    background-color:#F9B9F2;
+    border-radius: 4px ;
+    padding: 15px 20px;
+    color: black;
+    display: flex;
+    /* align-items: center;
+    justify-content: space-between;
+    border-left: 5px solid var(--text-muted); */
+   
+        }
