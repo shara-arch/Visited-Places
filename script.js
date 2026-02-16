@@ -126,7 +126,7 @@ const myTravelLog = new TravelLog();
         <strong>${seasonEmoji}Season:</strong> ${dest.season}<br> 
         <strong>📅Month:</strong> ${dest.month}<br> 
         <strong>📝Notes:</strong>
-         <p style="background-color:#cdc0cb; border-radius:4px; padding:1rem; font-size:0.9rem;">${dest.notes}</p><br><br> 
+         <p style="background-color:#cdc0cb; border-radius:4px; padding:1rem; font-size:0.9rem; ;">${dest.notes}</p><br><br> 
         <button onclick="handleDelete(${dest.id})" 
             style="background-color: #2B3D41;margin-top: 1rem;padding:15px; border:none;
             border-radius: 4px;cursor: pointer;color:white;font-size: 1rem;">Delete</button></div> `;

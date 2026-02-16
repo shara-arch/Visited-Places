@@ -7,13 +7,13 @@ It allows the user to **Create, View, and Delete destinations**, with details di
 ---
 
 ## 📸 Web-page Preview
-![Travel Log Screenshot](image.png)
+![Travel Log Screenshot](![alt text](image.png))
 
 ---
 
 ## 👩‍💻 Author's Information
 **Author's Name:** Sharon Moegi  
-**Contact Info:** (Email) sharonmoegi@gmail.com  
+**Contact Info:** (Email) sharamoegi@gmail.com  
 
 ---
 
@@ -28,8 +28,7 @@ git clone `https://github.com/shara-arch/Visited-Places.git`)
 ## 🧪 Behaviour Driven Development (BDD)
 ### 1. Displays Form for Destination Details
 - INPUT: Location, Sub-Location, Landmark, Year, Season, Month, Notes
-
-- OUTPUT: Displays saved destinations with relevant details
+- OUTPUT: Displays a list saved destinations.
 
 ### 2. Displays an Error Message if:
 - Location is null
