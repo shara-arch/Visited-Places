@@ -1,6 +1,15 @@
+//Local Storage
 function TravelLog(){
-    this.destinations = {};
-    this.currentId = 0;
+    this.destinations = this.loadFromStorage();
+};
+
+TravelLog.prototype.saveToStorage = function(){
+    localStorage.setItem('travelLogData', JSON.stringify(this.destinations));
+}
+
+TravelLog.prototype.loadFromStorage = function() { 
+    const savedData = localStorage.getItem('travelLogData'); 
+    return savedData ? JSON.parse(savedData) : {}; 
 };
 
 TravelLog.prototype.assignId = function () {
@@ -26,12 +35,14 @@ TravelLog.prototype.deleteDestination = function(id){
     return false;
 }
 
-function Destination(location, subLocation, landmark, year, season, month, notes) { 
-    this.location = location; 
-    this.subLocation = subLocation; 
-    this.landmark = landmark; 
-    this.year = year; 
-    this.season = season; 
-    this.month = month; 
-    this.notes = notes; 
-}
+
+TravelLog.prototype.displayTravelLog = function(){
+     const placesList = document.getElementById("places"); 
+     placesList.innerHTML = ""; 
+     for (let id in this.destinations) { 
+        const dest = this.destinations[id]; 
+        const li = document.createElement("li"); 
+        li.textContent = `${dest.location} - ${dest.subLocation}`; 
+        li.onclick = () => showDetails(dest); placesList.appendChild(li); 
+    } 
+     };
