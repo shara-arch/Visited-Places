@@ -33,4 +33,14 @@ TravelLog.prototype.deleteDestination = function(id){
     return false;
 }
 
-
+//
+function Destination(location, subLocation, landmark, year, season, month, notes) {
+     this.location = location; 
+     this.subLocation = subLocation; 
+     this.landmark = landmark; 
+     this.year = year; 
+     this.season = season; 
+     this.month = month; 
+     this.notes = notes; 
+     this.id = null;
+}
